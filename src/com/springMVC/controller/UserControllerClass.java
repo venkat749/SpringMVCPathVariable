@@ -37,6 +37,6 @@ public class UserControllerClass {
 		
 		ModelAndView model = new ModelAndView("userPage");
 		model.addObject("userMessage","UserName : "+user +"\n Class : "+className+"\n Subject : "+subject+"\n Mark : "+mark);
-		return model;
+		return model; 
 	}
 }
