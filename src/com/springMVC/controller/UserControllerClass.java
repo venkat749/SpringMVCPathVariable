@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -37,6 +38,17 @@ public class UserControllerClass {
 		
 		ModelAndView model = new ModelAndView("userPage");
 		model.addObject("userMessage","UserName : "+user +"\n Class : "+className+"\n Subject : "+subject+"\n Mark : "+mark);
-		return model; 
+		return model;
 	}
+	
+	@RequestMapping(value = "/users", method = RequestMethod.GET)
+	public ModelAndView readMe(@RequestParam Map<String,String> reqParams) {
+		
+		String name = reqParams.get("name");
+		String age = reqParams.get("age");
+		ModelAndView model = new ModelAndView("userPage");
+		model.addObject("userMessage","Hello "+name+". Your age is "+age);
+		return model;
+	}
+	
 }
