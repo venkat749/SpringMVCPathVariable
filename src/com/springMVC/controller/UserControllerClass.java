@@ -16,7 +16,7 @@ public class UserControllerClass {
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView readMe() {
 		ModelAndView model = new ModelAndView("userPage");
-		model.addObject("userMessage","Welcome to the Spring MVC World");
+		model.addObject("userMessage","Welcome All to the Spring MVC World");
 		return model;
 	}
 	
